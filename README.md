@@ -6,3 +6,5 @@ added basic block functionality
 
 todos:
 mine blocks
+
+basic mining done
