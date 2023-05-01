@@ -43,8 +43,8 @@ public class Node {
     public void addBlock(byte[] data) {
         // let's get the previous block
         Block previousBlock = getLastBlock();
-        byte[] newHash = findNewValidHash( previousBlock.myBlockHash(), data);
-        Block newBlock = newBlock(data, previousBlock.myBlockHash(), newHash);
+        byte[] newHash = findNewValidHash( previousBlock.thisBlockHash(), data);
+        Block newBlock = newBlock(data, previousBlock.thisBlockHash(), newHash);
         blockchain.add(newBlock);
     }
     public Block getLastBlock() {
@@ -58,8 +58,6 @@ public class Node {
         do {
             int timeStamp = (int) System.currentTimeMillis();
             newRandomHash = getHash(nonce, timeStamp, previousBlockHash, data);
-//            System.out.println("Checking ....");
-//            System.out.printf("\nchecking new Random Hash %s\nwith nonce: %s\n", bytesToHex(newRandomHash), nonce);
             nonce++;
             found = bytesToHex(newRandomHash).startsWith(diffString);
         } while(!found);
