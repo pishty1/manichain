@@ -9,4 +9,5 @@ mine blocks
 
 basic mining done
 
-todo: store the nonce in the block
+todo: store the nonce in the block  - done
+
