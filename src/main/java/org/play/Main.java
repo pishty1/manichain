@@ -14,8 +14,8 @@ public class Main {
         }
 
         node.getBlockchain().forEach(x -> {
-            String bHash = Node.bytesToHex(x.thisBlockHash());
-            String bPHash = Node.bytesToHex(x.previousBlockHash());
+            String bHash = Node.bytesToString(x.thisBlockHash());
+            String bPHash = Node.bytesToString(x.previousBlockHash());
             System.out.printf("\nblockhash: %s, previous Blockhash: %s %n", bHash,
                     bPHash);
         });
